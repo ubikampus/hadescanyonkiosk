@@ -3,6 +3,13 @@
  
 KIOSK_URL=http://spaceify.net/games/g/showroomducks/screen.html?id=showroomducks
 
+#Setup firewall, allow all outgoing traffic. Accept only incoming ssh
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw --force enable
+
 sudo add-apt-repository 'deb http://dl.google.com/linux/chrome/deb/ stable main'
 wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository universe
